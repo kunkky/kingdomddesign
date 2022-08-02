@@ -1,0 +1,32 @@
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.home-slider {
+
+    background-image: url('images/sliderbackground-dark.png');
+    background-position: center;
+    background-size: cover;
+}
+.stripe{
+    border-radius: 0px!important;
+    height: 100%;
+    padding: 0%;
+}
+
+/*/// slider user///*/
+.short-testimony{
+text-align: right;
+display: flex;
+flex-direction: row;
+justify-content: right;
+}
+.short-testimony div{
+padding: 10px;
+}
+.user{
+height: 100px;
+width: 100px;
+}
