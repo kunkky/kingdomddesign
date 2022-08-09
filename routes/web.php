@@ -22,3 +22,19 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+///admin route
+
+Route::get('admin/dashboard', function () {
+    return view('admin.dashboard');
+})->middleware(['auth:admin'])->name('admin.dashboard');
+
+require __DIR__.'/adminauth.php';
+
+///Contributor route
+
+Route::get('contributor/dashboard', function () {
+    return view('contributor.dashboard');
+})->middleware(['auth:contributor'])->name('contributor.dashboard');
+
+require __DIR__.'/contributorauth.php';

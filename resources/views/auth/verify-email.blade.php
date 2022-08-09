@@ -1,10 +1,20 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+
+<x-header></x-header>
+<body>
+<x-navigation></x-navigation>
+
+
+<section data-bs-version="5.1" class="form2 cid-tdhFqFlM1N mbr-fullscreen" id="form2-d">
+
+
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+        <div class="col-md-4 formbody">
+            <div class="col-lg-12 mx-auto mbr-form">
+
+
 
         <div class="mb-4 text-sm text-gray-600">
             {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
@@ -21,19 +31,26 @@
                 @csrf
 
                 <div>
-                    <x-button>
-                        {{ __('Resend Verification Email') }}
-                    </x-button>
+                <button type="submit" class="w-100 btn btn-lg btn-primary">
+                      {{ __('Resend Verification Email') }}
+                </button>
                 </div>
             </form>
 
             <form method="POST" action="{{ route('logout') }}">
                 @csrf
 
-                <button type="submit" class="underline text-sm text-gray-600 hover:text-gray-900">
+                <button type="submit" class="w-100 btn btn-lg btn-primary">
                     {{ __('Log Out') }}
                 </button>
-            </form>
+  </form>
+            </div>
         </div>
-    </x-auth-card>
-</x-guest-layout>
+        </div>
+    </div>
+</section>
+
+<hr>
+<x-footer></x-footer>
+  </body>
+</html>

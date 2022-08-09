@@ -1,10 +1,19 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+
+<x-header></x-header>
+<body>
+<x-navigation></x-navigation>
+
+
+<section data-bs-version="5.1" class="form2 cid-tdhFqFlM1N mbr-fullscreen" id="form2-d">
+
+
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+        <div class="col-md-4 formbody">
+            <div class="col-lg-12 mx-auto mbr-form">
+
 
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
@@ -19,30 +28,37 @@
             <div>
                 <x-label for="email" :value="__('Email')" />
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
+                <x-input id="email" class="form-control" type="email" name="email" :value="old('email', $request->email)" required autofocus />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
                 <x-label for="password" :value="__('Password')" />
 
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
+                <x-input id="password" class="form-control" type="password" name="password" required />
             </div>
 
             <!-- Confirm Password -->
             <div class="mt-4">
                 <x-label for="password_confirmation" :value="__('Confirm Password')" />
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
+                <x-input id="password_confirmation" class="form-control"
                                     type="password"
                                     name="password_confirmation" required />
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Reset Password') }}
-                </x-button>
+             <button class="w-100 btn btn-lg btn-primary" type="submit">Reset Password</button>
             </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+
+  </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+<x-footer></x-footer>
+  </body>
+</html>

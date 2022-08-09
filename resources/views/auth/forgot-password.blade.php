@@ -1,12 +1,21 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
 
-        <div class="mb-4 text-sm text-gray-600">
+<x-header></x-header>
+<body>
+<x-navigation></x-navigation>
+
+
+<section data-bs-version="5.1" class="form2 cid-tdhFqFlM1N mbr-fullscreen" id="form2-d">
+
+
+
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+        <div class="col-md-4 formbody">
+            <div class="col-lg-12 mx-auto mbr-form">
+
+
+        <div class="alert alert-secondary" role="alert">
             {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
         </div>
 
@@ -20,17 +29,27 @@
             @csrf
 
             <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+            <div class="form-floating">
+                <x-input id="email" class="form-control" type="email" name="email" :value="old('email')" required autofocus placeholder="name@example.com"/>
+                <label for="floatingInput">Email address</label>
             </div>
+
 
             <div class="flex items-center justify-end mt-4">
                 <x-button>
                     {{ __('Email Password Reset Link') }}
                 </x-button>
             </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+
+
+  </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+<x-footer></x-footer>
+  </body>
+</html>
